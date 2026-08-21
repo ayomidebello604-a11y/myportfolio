@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes liquidFill {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.liquid-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  transition: left 0.6s ease;
+}
+
+.liquid-button-dark:hover {
+  animation: liquidFill 0.6s ease;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0, #ffffff);
+  background-size: 200% 100%;
+}
+
+.liquid-button-light:hover {
+  animation: liquidFill 0.6s ease;
+  background: linear-gradient(90deg, #4b5563, #2d3748, #4b5563);
+  background-size: 200% 100%;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 8px 16px;
+}
