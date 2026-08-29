@@ -50,10 +50,10 @@ export default function Home() {
                       <h1 className="text-5xl font-bold">FRONTEND <br/> DEVELOPER!</h1>
                     <p className="text-lg mb-8 text-gray-300">I enjoy creating scalable frontend applications <br /> with clean UI, smooth animations, and great user experience.</p>
                     <div className="flex gap-4">
-                      <button className="liquid-button liquid-button-dark bg-gray-800 text-white hover:text-black font-bold py-2 px-4 rounded-lg cursor-pointer">
+                      <button className="liquid-button liquid-button-dark bg-gray-900/50 text-white border border-gray-700 hover:border-gray-500 font-bold py-2 px-4 rounded-lg cursor-pointer">
                           Contact Me
                       </button>
-                      <button className="liquid-button liquid-button-light bg-white text-black hover:text-gray-300 font-bold py-2 px-4 rounded-lg cursor-pointer">
+                      <button className="liquid-button liquid-button-light bg-gray-900/50 text-white border border-gray-700 hover:border-gray-500 font-bold py-2 px-4 rounded-lg cursor-pointer">
                           View Projects
                       </button>
                     </div>

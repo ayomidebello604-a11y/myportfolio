@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import ffdb from "../images/ffdb.png";
 import pq from "../images/pq.png";
+import Csdb from "../images/csdb.png";
 
 const projects = [
   {
@@ -14,46 +15,50 @@ const projects = [
     githubUrl: "https://github.com/",
     badge: "AI",
     location: "Fintech",
-    price: "$24k",
-    tags: ["React", "Tailwind", "UI"],
+    tags: ["React", "Tailwind", "Supabase"],
   },
   {
     id: 2,
+    title: "Aether AI",
+    description: "A flexible concept card showcasing extra portfolio work with a refined presentation and action links.",
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
+    liveUrl: "https://aetherai-theta.vercel.app/",
+    githubUrl: "https://github.com/aetherai",
+    badge: "Case",
+    location: "Studio",
+    tags: ["Nextjs", "Tailwind", "Supabase"],
+  },
+  {
+    id: 3,
     title: "Philo-quote",
     description:
       "A clean quote platform focused on readability, motion, and elegant storytelling for philosophical content.",
     image: pq,
     liveUrl: "https://philo-quote.vercel.app/",
     githubUrl: "https://github.com/",
-    badge: "Web",
     location: "Editorial",
-    price: "$12k",
     tags: ["React", "Motion", "Design"],
   },
   {
-    id: 3,
-    title: "Project 3",
-    description: "A flexible concept card showcasing extra portfolio work with a refined presentation and action links.",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "#",
-    githubUrl: "#",
-    badge: "Case",
-    location: "Studio",
-    price: "$8k",
-    tags: ["Next", "Brand"],
+    id: 4,
+    title: "careSync",
+    description: "An additional portfolio card ready to replace with your next launch, case study, or product demo.",
+    image: Csdb,
+    liveUrl: "https://caresync-wine.vercel.app/",
+    githubUrl: "https://github.com/",
+    location: "HealthTech",
+    tags: ["React", "API","Firebase"],
   },
   {
-    id: 4,
-    title: "Project 4",
-    description: "An additional portfolio card ready to replace with your next launch, case study, or product demo.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "#",
-    githubUrl: "#",
-    badge: "Launch",
+    id: 5,
+    title: "Cv Boost",
+    description: "A modern CV builder with a clean interface and real-time preview.",
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
+    liveUrl: "https://cvboost.vercel.app/",
+    githubUrl: "https://github.com/",
     location: "Product",
-    price: "$10k",
-    tags: ["React", "API"],
-  },
+    tags: ["Nextjs", "Tailwind", "Supabase"],
+  }
 ];
 
 export default function Projects() {
@@ -67,7 +72,7 @@ export default function Projects() {
             Selected Work
           </p>
           <h2 className="text-4xl font-semibold text-white sm:text-5xl">
-            Projects in a deck-like flow
+            Projects 
           </h2>
         </div>
 
@@ -86,7 +91,7 @@ export default function Projects() {
                   total={projects.length}
                   isHovered={hoveredId === project.id}
                   onHoverStart={() => setHoveredId(project.id)}
-                  onHoverEnd={() => setHoveredId(null)}
+                  onHoverEnd={() => setHoveredId(null)}  
                 />
               </div>
             ))}

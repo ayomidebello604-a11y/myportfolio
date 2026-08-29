@@ -38,7 +38,7 @@ export default function Contact() {
                     </div>
 
                     <div className='flex-1 min-w-96 flex justify-center'>
-                        <div className='glass p-8 w-full rounded-2xl'>
+                        <div className='bg-gray-900/50 border border-gray-700 p-8 w-full rounded-2xl'>
                         
                   <form onSubmit={handleSubmit} className='space-y-6'>
                             <div>
@@ -52,7 +52,7 @@ export default function Contact() {
                                         placeholder="your@email.com" 
                                         onChange={handleChange}
                                         required
-                                        className='w-full pl-14 pr-4 py-3  text-white rounded-lg border border-gray-700 focus:border-gray-500 focus:outline-none transition duration-300 placeholder-gray-500'
+                                        className='w-full pl-14 pr-4 py-3 bg-gray-900/50 text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none transition duration-300 placeholder-gray-500'
                                     />
                                 </div>
                             </div>
@@ -66,13 +66,13 @@ export default function Contact() {
                                     onChange={handleChange}
                                     required
                                     rows="6"
-                                    className='w-full px-4 py-3  text-white rounded-lg border border-gray-700 focus:border-gray-500 focus:outline-none transition duration-300 placeholder-gray-500 resize-none'
+                                    className='w-full px-4 py-3 bg-gray-900/50 text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none transition duration-300 placeholder-gray-500 resize-none'
                                 />
                             </div>
                             
                             <button 
                                 type="submit"
-                                className='w-full bg-white text-black font-bold py-3 px-6 rounded-lg hover:shadow-lg  transition-all duration-300 flex items-center justify-center gap-2'
+                                className='w-full bg-blue-600/70 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2'
                             >
                                 <span>Send Message</span>
                                 <IoMdSend className='text-xl' />

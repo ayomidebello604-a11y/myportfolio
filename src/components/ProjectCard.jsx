@@ -15,7 +15,7 @@ export default function ProjectCard({
 
   return (
     <motion.article
-      className="relative w-[280px] shrink-0 overflow-hidden rounded-[28px] border border-slate-200/80 bg-white text-slate-900 shadow-[0_20px_45px_rgba(15,23,42,0.18)] sm:w-[300px]"
+      className="relative w-[280px] shrink-0 overflow-hidden rounded-[28px] border border-gray-700 bg-gray-900/50 text-white shadow-[0_20px_45px_rgba(15,23,42,0.18)] sm:w-[300px]"
       initial={false}
       animate={{
         rotate: isHovered ? 0 : baseRotation,
@@ -37,7 +37,7 @@ export default function ProjectCard({
           alt={project.title}
           className="h-full w-full object-cover object-top"
         />
-        <span className="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-700 backdrop-blur">
+        <span className="absolute right-3 top-3 rounded-full bg-gray-900/90 border border-gray-700 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white backdrop-blur">
           {project.badge ?? "Featured"}
         </span>
       </div>
@@ -47,20 +47,20 @@ export default function ProjectCard({
           <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">
             {project.location ?? "Remote"}
           </p>
-          <span className="rounded-full bg-slate-900 px-3 py-1 text-[11px] font-semibold text-white">
+          <span className="rounded-full bg-gray-800/70 px-3 py-1 text-[11px] font-semibold text-white">
             {project.price ?? "Live"}
           </span>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-slate-900">{project.title}</h3>
+          <h3 className="text-xl font-semibold text-white">{project.title}</h3>
           <div className="mt-2 flex flex-wrap gap-2">
             {(project.tags ?? ["React", "UI"])
               .slice(0, 3)
               .map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-medium text-slate-500"
+                  className="rounded-full border border-gray-700 bg-gray-800/50 px-2.5 py-1 text-[11px] font-medium text-gray-300"
                 >
                   {tag}
                 </span>
@@ -68,12 +68,12 @@ export default function ProjectCard({
           </div>
         </div>
 
-        <p className="text-sm leading-6 text-slate-600">
+        <p className="text-sm leading-6 text-gray-300">
           {project.description}
         </p>
 
-        <div className="mt-auto flex items-center justify-between border-t border-slate-200 pt-4">
-          <span className="text-sm font-medium text-slate-500">
+        <div className="mt-auto flex items-center justify-between border-t border-gray-700 pt-4">
+          <span className="text-sm font-medium text-gray-400">
             {project.status ?? "Case Study"}
           </span>
           <div className="flex items-center gap-2">
@@ -81,7 +81,7 @@ export default function ProjectCard({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:bg-slate-700"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600/70 px-3 py-2 text-sm font-medium text-white transition hover:bg-blue-600"
             >
               <FiExternalLink size={14} />
               Live
@@ -90,7 +90,7 @@ export default function ProjectCard({
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/50 px-3 py-2 text-sm font-medium text-white transition hover:border-gray-600 hover:bg-gray-700/50"
             >
               <FaGithub size={14} />
               GitHub
