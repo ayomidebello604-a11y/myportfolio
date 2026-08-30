@@ -40,28 +40,28 @@ export default function Home() {
     }, [fullText]);
 
     return (
-        <div className= "p-6 m-6 ">
-     <section ref={sectionRef} id='home' className='flex flex-cols items-center justify-between gap-12 mt-8'>
-           <div>
-                <img src={img} alt="profile" className=""/>
+        <div className="p-3 md:p-6 m-4 md:m-8">
+     <section ref={sectionRef} id='home' className='flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-12 mt-8'>
+           <div className="flex justify-center md:block w-full md:w-auto">
+                <img src={img} alt="profile" className="w-40 h-40 md:w-auto md:h-auto rounded-lg"/>
             </div>
-                 <div className="mr-12">
-                    <p className="font-bold text-lg mb-4">{displayText}</p>
-                      <h1 className="text-5xl font-bold">FRONTEND <br/> DEVELOPER!</h1>
-                    <p className="text-lg mb-8 text-gray-300">I enjoy creating scalable frontend applications <br /> with clean UI, smooth animations, and great user experience.</p>
-                    <div className="flex gap-4">
-                      <button className="liquid-button liquid-button-dark bg-gray-900/50 text-white border border-gray-700 hover:border-gray-500 font-bold py-2 px-4 rounded-lg cursor-pointer">
+                 <div className="md:mr-12 w-full md:w-auto text-center md:text-left">
+                    <p className="font-bold text-base md:text-lg mb-4">{displayText}</p>
+                      <h1 className="text-3xl md:text-5xl font-bold">FRONTEND <br/> DEVELOPER!</h1>
+                    <p className="text-sm md:text-lg mb-8 text-gray-300">I enjoy creating scalable frontend applications <br className="hidden md:block"/> with clean UI, smooth animations, and great user experience.</p>
+                    <div className="flex gap-3 md:gap-4 flex-col sm:flex-row">
+                      <button className="bg-gray-900/50 text-white border border-gray-700 hover:scale-105 font-bold py-2 px-4 rounded-lg cursor-pointer text-sm md:text-base transition">
                           Contact Me
                       </button>
-                      <button className="liquid-button liquid-button-light bg-gray-900/50 text-white border border-gray-700 hover:border-gray-500 font-bold py-2 px-4 rounded-lg cursor-pointer">
-                          View Projects
+                      <button className="bg-gray-900/50 text-white border border-gray-700 hover:scale-105 font-bold py-2 px-4 rounded-lg cursor-pointer text-sm md:text-base transition">
+                          Download CV
                       </button>
                     </div>
-                    <div className='flex flex-cols gap-12'>
-                        <FaXTwitter className="text-4xl mt-8 p-2 text-black rounded-md bg-white hover:text-gray-500 cursor-pointer" />
-                        <FaWhatsapp className="text-4xl mt-8 p-2  text-black bg-white rounded-md hover:text-gray-500 cursor-pointer" />
-                        <FaLinkedin className="text-4xl mt-8 p-2  text-black bg-white rounded-md hover:text-gray-500 cursor-pointer" />
-                        <IoMdMailUnread className="text-4xl mt-8 p-2  text-black bg-white rounded-md hover:text-gray-500 cursor-pointer" />
+                    <div className='flex flex-cols gap-6 md:gap-12 justify-center md:justify-start mt-6 md:mt-8'>
+                        <FaXTwitter className="text-3xl md:text-4xl p-2 text-black rounded-md bg-white hover:text-gray-500 cursor-pointer transition" />
+                        <FaWhatsapp className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
+                        <FaLinkedin className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
+                        <IoMdMailUnread className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
                     </div>
             </div>
          

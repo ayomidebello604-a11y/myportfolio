@@ -6,7 +6,7 @@ import Contact from "./Sections/Contact.jsx"
 import Projects from "./Sections/Projects.jsx"
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen  bg-black text-white">
       <Navbar />
       <Home />
       <About />

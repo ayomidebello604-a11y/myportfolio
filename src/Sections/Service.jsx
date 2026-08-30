@@ -42,14 +42,14 @@ const Services = [
 
 export default function Service() {
   return (
-    <section id="services" className="p-8">
-      <div className="flex flex-col lg:flex-row justify-between px-20 items-start">
+    <section id="services" className="m-4 md:m-8 p-4 md:p-8">
+      <div className="flex flex-col gap-8 md:gap-0 lg:flex-row justify-between md:px-6 lg:px-20 items-start">
         
-              <div>
-      <h1 className="  text-6xl lg:text-6xl  font-bold tracking-tight max-w-xs">
+              <div className="md:max-w-sm">
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight max-w-xs mb-3 md:mb-0">
           WHAT WE CAN DO FOR YOU?
                   </h1>  
-                  <p>
+                  <p className="text-sm md:text-base text-gray-300 hidden md:block">
                        Full-spectrum web development tailored to elevate your digital presence.
                   </p>
         </div>
@@ -58,21 +58,21 @@ export default function Service() {
               
 
         {/* 3-Column Compact Grid for Cubes */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 w-full md:max-w-2xl">
           {Services.map((service) => (
             <div 
               key={service.id} 
-              className="glass aspect-square p-4 rounded-xl flex flex-col items-center justify-center text-center transition-transform duration-300 hover:rotate-[-2deg] hover:scale-105"
+              className="glass aspect-square p-3 md:p-4 rounded-xl flex flex-col items-center justify-center text-center transition-transform duration-300 hover:rotate-[-2deg] hover:scale-105"
             >
               {service.icon && (
-                <div className="text-3xl text-cyan-400 mb-2">
+                <div className="text-2xl md:text-3xl text-cyan-400 mb-2">
                   {service.icon}
                 </div>
               )}
-              <h3 className="text-sm font-bold text-white mb-1 leading-tight">
+              <h3 className="text-xs md:text-sm font-bold text-white mb-1 leading-tight">
                 {service.title}
               </h3>
-              <p className="text-xs text-gray-300 line-clamp-2">
+              <p className="text-[10px] md:text-xs text-gray-300 line-clamp-2">
                 {service.description}
               </p>
             </div>
