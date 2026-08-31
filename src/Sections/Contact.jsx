@@ -88,7 +88,7 @@ export default function Contact() {
                       placeholder="your@email.com"
                       onChange={handleChange}
                       required
-                      className="w-full pl-12 md:pl-14 pr-4 py-2 md:py-3 bg-gray-900/50 text-sm md:text-base text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none transition duration-300 placeholder-gray-500"
+                      className="w-full pl-12 md:pl-14 pr-4 py-2 md:py-3 bg-gray-900/50 text-sm md:text-base text-white rounded-lg border border-gray-700 focus:border-gray-500 focus:outline-none transition duration-300 placeholder-gray-500"
                     />
                   </div>
                 </div>
@@ -102,14 +102,14 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows="4"
-                    className="w-full px-4 py-2 md:py-3 bg-gray-900/50 text-sm md:text-base text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none transition duration-300 placeholder-gray-500 resize-none"
+                    className="w-full px-4 py-2 md:py-3 bg-gray-900/50 text-sm md:text-base text-white rounded-lg border border-gray-700 focus:border-gray-500 focus:outline-none transition duration-300 placeholder-gray-500 resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-white text-black font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 text-sm md:text-base"
+                  className="w-full bg-white text-black font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 text-sm md:text-base"
                 >
                   <span>{loading ? 'Sending...' : 'Send Message'}</span>
                   <IoMdSend className="text-lg md:text-xl" />
