@@ -20,13 +20,13 @@ const projects = [
   {
     id: 2,
     title: "Aether AI",
-    description: "A flexible concept card showcasing portfolio work with a refined presentation.",
+    description: "A multi-model Platform that allows registered user to review code,Ask vast questions and generate image on different sections parrallel",
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
     liveUrl: "https://aetherai-theta.vercel.app/",
     githubUrl: "https://github.com/ayomidebello604-a11y/aetherai",
     badge: "Case",
     location: "Studio",
-    tags: ["Nextjs", "Tailwind", "Supabase"],
+    tags: ["Nextjs", "Tailwind", "Supabase","API"],
   },
   {
     id: 3,
