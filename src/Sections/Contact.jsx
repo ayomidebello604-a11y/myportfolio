@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { IoMdSend, IoMdMailUnread } from 'react-icons/io';
 import emailjs from '@emailjs/browser';
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     email: '',
@@ -11,13 +15,8 @@ export default function Contact() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const SERVICE_ID = 'service_rpbjl8v';
-  const TEMPLATE_ID = 'template_4zbxlt9';
-  const PUBLIC_KEY = '2vz8s2Vc5J3RJwK5K';
-
-  // Initialize EmailJS globally once on component mount
   useEffect(() => {
-    emailjs.init(PUBLIC_KEY);
+    emailjs.init({ publicKey: PUBLIC_KEY });
   }, []);
 
   const handleChange = (e) => {
@@ -39,7 +38,6 @@ export default function Contact() {
       name: formData.email.split('@')[0],
     };
 
-    // Called with initialized public key
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, templateParams)
       .then(() => {
