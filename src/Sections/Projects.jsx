@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
 import ffdb from "../images/ffdb.png";
 import pq from "../images/pq.png";
-import Csdb from "../images/csdb.png";
+import Csdb from "../images/Csdb.png";
 
 const projects = [
   {
