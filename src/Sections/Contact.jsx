@@ -1,10 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { IoMdSend, IoMdMailUnread } from 'react-icons/io';
-import emailjs from '@emailjs/browser';
-
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,10 +10,6 @@ export default function Contact() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    emailjs.init({ publicKey: PUBLIC_KEY });
-  }, []);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -27,30 +18,28 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus('');
 
-    const templateParams = {
-      email: formData.email,
-      message: formData.message,
-      name: formData.email.split('@')[0],
-    };
-
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(() => {
-        setStatus('Message sent successfully!');
-        setFormData({ email: '', message: '' });
-      })
-      .catch((err) => {
-        console.error('EmailJS Error:', err);
-        setStatus('Failed to send message. Please try again.');
-      })
-      .finally(() => {
-        setLoading(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
+
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? 'Something went wrong.');
+
+      setStatus("Message sent successfully. I'll get back to you shortly.");
+      setFormData({ email: '', message: '' });
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : 'Something went wrong.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
