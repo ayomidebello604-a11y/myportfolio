@@ -1,7 +1,5 @@
 import Sendly from '@sendlyapi/node';
 
-const sendly = new Sendly(process.env.SENDLY_API_KEY);
-
 const escapeHtml = (value) =>
   value
     .replace(/&/g, '&amp;')
@@ -32,6 +30,13 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (!process.env.SENDLY_API_KEY) {
+      console.error('SENDLY_API_KEY is not configured.');
+      return res.status(500).json({ error: 'Email service is not configured.' });
+    }
+
+    const sendly = new Sendly(process.env.SENDLY_API_KEY);
+
     await sendly.email.send({
       to: ['hello@bellosamad.me'],
       from: 'contact@bellosamad.me',
@@ -45,6 +50,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true });
   } catch (error) {
     console.error('Sendly error:', error);
-    return res.status(502).json({ error: "Couldn't send that just now." });
+    return res.status(502).json({ error: "Couldn't send that just now." });  
   }
 }

@@ -94,7 +94,7 @@ export default function Contact() {
                 </div>
 
                 <button
-                  type="submit"
+                  type="submit"    
                   disabled={loading}
                   className="w-full bg-white text-black font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 text-sm md:text-base"
                 >
@@ -108,7 +108,7 @@ export default function Contact() {
                       status.includes('successfully') ? 'text-green-400' : 'text-red-400'
                     }`}
                   >
-                    {status}
+                    {status}    
                   </p>
                 )}
               </form>
