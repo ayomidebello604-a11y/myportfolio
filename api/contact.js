@@ -38,8 +38,8 @@ export default async function handler(req, res) {
     const sendly = new Sendly(process.env.SENDLY_API_KEY);
 
     await sendly.email.send({
-      to: ['hello@bellosamad.me'],
-      from: 'contact@bellosamad.me',
+      to: ['ayomidebello604@gmail.com'],
+      from: 'Dev@bellosamad.me',
       subject: `Portfolio message from ${normalizedEmail}`,
       html:
         `<p><b>From:</b> ${escapeHtml(normalizedEmail)}</p>` +
