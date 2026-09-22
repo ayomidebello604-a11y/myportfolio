@@ -1,4 +1,5 @@
 import img from '../images/img.png';
+import bellosamadcv from '../files/bellosamadcv.pdf';
 import { useState, useEffect, useRef } from 'react';
 import { FaXTwitter,FaWhatsapp,FaLinkedin } from "react-icons/fa6";
 import { IoMdMailUnread } from "react-icons/io";
@@ -52,16 +53,26 @@ export default function Home() {
                     <div className="flex gap-3 md:gap-4 flex-col sm:flex-row">
                       <button className="bg-gray-900/50 text-white border border-gray-700 hover:scale-105 font-bold py-2 px-4 rounded-lg cursor-pointer text-sm md:text-base transition">
                           Contact Me
-                      </button>
-                      <button className="bg-gray-900/50 text-white border border-gray-700 hover:scale-105 font-bold py-2 px-4 rounded-lg cursor-pointer text-sm md:text-base transition">
-                          Download CV
-                      </button>
+                        </button>
+                        
+                     <a href={bellosamadcv} download="Bello_Samad_CV.pdf" className="bg-gray-900/50 text-white border border-gray-700 hover:scale-105 font-bold py-2 px-4 rounded-lg cursor-pointer text-sm md:text-base transition">
+                            Download CV
+                        </a>
+                        
                     </div>
                     <div className='flex flex-cols gap-6 md:gap-12 justify-center md:justify-start mt-6 md:mt-8'>
-                        <FaXTwitter className="text-3xl md:text-4xl p-2 text-black rounded-md bg-white hover:text-gray-500 cursor-pointer transition" />
-                        <FaWhatsapp className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
-                        <FaLinkedin className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
-                        <IoMdMailUnread className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
+                        <a href="https://x.com/samad_the_dev?s=11" target="_blank" rel="noreferrer" aria-label="X profile">
+                            <FaXTwitter className="text-3xl md:text-4xl p-2 text-black rounded-md bg-white hover:text-gray-500 cursor-pointer transition" />
+                        </a>
+                        <a href="https://wa.me/+2347058403330" target="_blank" rel="noreferrer" aria-label="WhatsApp profile">
+                            <FaWhatsapp className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/samad-bello-a613573b9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+                            <FaLinkedin className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
+                        </a>
+                        <a href="mailto:ayomidebello604@gmail.com" aria-label="Send an email">
+                            <IoMdMailUnread className="text-3xl md:text-4xl p-2 text-black bg-white rounded-md hover:text-gray-500 cursor-pointer transition" />
+                        </a>
                     </div>
             </div>
          

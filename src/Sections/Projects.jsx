@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
+import { FiArrowRight } from "react-icons/fi";
 import ffdb from "../images/ffdb.png";
 import pq from "../images/pq.png";
 import Csdb from "../images/Csdb.png";
+import aether from "../images/aether.png"
 
 const projects = [
   {
@@ -21,7 +23,7 @@ const projects = [
     id: 2,
     title: "Aether AI",
     description: "A multi-model Platform that allows registered user to review code,Ask vast questions and generate image on different sections parrallel",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
+    image: aether,
     liveUrl: "https://aetherai-theta.vercel.app/",
     githubUrl: "https://github.com/ayomidebello604-a11y/aetherai",
     badge: "Case",
@@ -226,6 +228,10 @@ export default function Projects() {
                 />
               </div>
             ))}
+          </div>
+          <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
+            <span>Swipe for more projects</span>
+            <FiArrowRight aria-hidden="true" className="text-base text-blue-400" />
           </div>
         </div>
 
