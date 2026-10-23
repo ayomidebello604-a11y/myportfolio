@@ -1,4 +1,5 @@
 import Sendly from '@sendlyapi/node';
+import { env } from 'node:process';
 
 const escapeHtml = (value) =>
   value
@@ -30,12 +31,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    if (!process.env.SENDLY_API_KEY) {
-      console.error('SENDLY_API_KEY is not configured.');
+    const sendlyApiKey = env.SENDLYAI_API_KEY || env.SENDLY_API_KEY;
+    if (!sendlyApiKey) {
+      console.error('SENDLYAI_API_KEY is not configured.');
       return res.status(500).json({ error: 'Email service is not configured.' });
     }
 
-    const sendly = new Sendly(process.env.SENDLY_API_KEY);
+    const sendly = new Sendly(sendlyApiKey);
 
     await sendly.email.send({
       to: ['ayomidebello604@gmail.com'],
