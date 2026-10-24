@@ -48,25 +48,10 @@ export default function Navbar() {
       {isOpen && (
         <nav className="absolute left-0 right-0 top-full border-b border-gray-700 bg-gray-900/95 p-4 backdrop-blur md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
-            {links.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === '/'}
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  `rounded-lg px-3 py-3 text-lg transition hover:bg-gray-800 ${
-                    isActive ? 'text-white' : 'text-gray-300'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
             <RouteButton
               to="/contact"
               onClick={closeMenu}
-              className="mt-2 w-full text-lg"
+              className="w-full text-lg"
             >
               Contact
             </RouteButton>
