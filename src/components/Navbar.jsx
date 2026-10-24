@@ -18,7 +18,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-800/70 bg-black/85 px-4 py-4 backdrop-blur md:px-8">
+    <header className="sticky top-0 z-50  px-4 py-4  md:px-8">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
         <Link to="/" onClick={closeMenu} className="text-2xl italic md:text-3xl" aria-label="Samad Bello home">
           B.S.
@@ -32,7 +32,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <RouteButton to="/contact" className="hidden md:inline-flex">Contact</RouteButton>
+        <div className="hidden md:block">
+          <RouteButton to="/contact">Contact</RouteButton>
+        </div>
 
         <button
           type="button"
@@ -48,10 +50,25 @@ export default function Navbar() {
       {isOpen && (
         <nav className="absolute left-0 right-0 top-full border-b border-gray-700 bg-gray-900/95 p-4 backdrop-blur md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {links.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === '/'}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `rounded-lg px-3 py-3 text-lg transition hover:bg-gray-800 ${
+                    isActive ? 'text-white' : 'text-gray-300'
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
             <RouteButton
               to="/contact"
               onClick={closeMenu}
-              className="w-full text-lg"
+              className="mt-2 w-full text-lg"
             >
               Contact
             </RouteButton>
