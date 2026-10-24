@@ -1,70 +1,62 @@
-import useEmblaCarousel from 'embla-carousel-react';
-import AutoScroll from 'embla-carousel-auto-scroll';
-import { TiHtml5 } from "react-icons/ti";
-import { SiJavascript, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
-import { IoLogoCss3 } from "react-icons/io5";
-import { FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
+import { FaGithub, FaGitAlt, FaReact } from 'react-icons/fa';
+import { IoLogoCss3 } from 'react-icons/io5';
+import {
+  SiExpress,
+  SiFirebase,
+  SiJavascript,
+  SiNextdotjs,
+  SiPostgresql,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+  SiZod,
+} from 'react-icons/si';
+import { TiHtml5 } from 'react-icons/ti';
+
+const technologies = [
+  { name: 'HTML5', Icon: TiHtml5, color: '#E34C26' },
+  { name: 'CSS3', Icon: IoLogoCss3, color: '#264DE4' },
+  { name: 'Express.js', Icon: SiExpress, color: '#f3e7e7' },
+  { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
+  { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
+  { name: 'Next.js', Icon: SiNextdotjs, color: '#f3e7e7' },
+  { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169E1' },
+  { name: 'React', Icon: FaReact, color: '#61DAFB' },
+  { name: 'Supabase', Icon: SiSupabase, color: '#3FCF8E' },
+  { name: 'Firebase', Icon: SiFirebase, color: '#FFCA28' },
+  { name: 'Git', Icon: FaGitAlt, color: '#F1502F' },
+  { name: 'GitHub', Icon: FaGithub, color: '#f3e7e7' },
+  { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+  { name: 'Zod', Icon: SiZod, color: '#3E67B1' },
+];
+
+function TechnologyTrack({ copy }) {
+  return (
+    <div className="flex shrink-0 items-center gap-10 px-5 md:gap-16 md:px-8" aria-hidden={copy}>
+      {technologies.map(({ name, Icon, color }) => (
+        <div
+          key={name}
+          className="flex min-w-16 flex-col items-center gap-2 text-center md:min-w-20"
+          title={name}
+        >
+          <Icon className="text-3xl md:text-4xl" style={{ color }} aria-hidden="true" />
+          <span className="whitespace-nowrap text-xs text-gray-300 md:text-sm">{name}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Stacks() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    AutoScroll({
-      speed: 5.0,               // Increase/decrease this for faster or slower continuous movement
-      startDelay: 0,            // Starts scrolling immediately (no initial pause)
-      stopOnInteraction: false, // Keeps continuous sliding even if touched/dragged
-      stopOnMouseEnter: true   // Pauses continuous sliding when hovered
-    })
-  ]);
-
   return (
-    <div id="stacks" className="embla overflow-hidden w-full max-w-[640px] mx-auto" ref={emblaRef}>
-      <div className="embla__container flex py-6">
-        
-        {/* Each slide takes 25% to display exactly 4 items at a time */}
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <TiHtml5 className="text-6xl" style={{ color: '#E34C26' }} />
-          <span className="text-sm font-medium">HTML5</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <IoLogoCss3 className="text-6xl" style={{ color: '#264DE4' }} />
-          <span className="text-sm font-medium">CSS3</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <SiTailwindcss className="text-6xl" style={{ color: '#06B6D4' }} />
-          <span className="text-sm font-medium">Tailwind</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <SiJavascript className="text-6xl" style={{ color: '#F7DF1E' }} />
-          <span className="text-sm font-medium">JavaScript</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <SiNextdotjs className="text-6xl" style={{ color: '#f3e7e7' }} />
-          <span className="text-sm font-medium">Next.js</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <FaReact className="text-6xl" style={{ color: '#61DAFB' }} />
-          <span className="text-sm font-medium">React</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <FaGitAlt className="text-6xl" style={{ color: '#F1502F' }} />
-          <span className="text-sm font-medium">Git</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <FaGithub className="text-6xl rounded-full bg-white" style={{ color: '#181717' }} />
-          <span className="text-sm font-medium">GitHub</span>
-        </div>
-
-        <div className="embla__slide flex-[0_0_25%] min-w-0 flex flex-col items-center gap-2">
-          <SiTypescript className="text-6xl" style={{ color: '#3178C6' }} />
-          <span className="text-sm font-medium">TypeScript</span>
-        </div>
-
+    <div
+      id="stacks"
+      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-6"
+      aria-label="Technology stack"
+    >
+      <div className="stack-marquee flex w-max">
+        <TechnologyTrack copy={false} />
+        <TechnologyTrack copy={true} />
       </div>
     </div>
   );

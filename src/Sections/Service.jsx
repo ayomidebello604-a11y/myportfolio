@@ -1,56 +1,55 @@
-import React from 'react';
 import { MdCode, MdDashboard, MdSearch, MdSpeed, MdPublic, MdGroups2 } from "react-icons/md";
 
 const Services = [
   {
     id: 1,
-    title: "Web Development",
-    description: "Building responsive and dynamic websites using modern tech.",
+    title: "AI Products",
+    description: "Research, code analysis, and content-generation experiences.",
     icon: <MdCode />
   },
   {
     id: 2,
-    title: "Responsive Design",
-    description: "Creating user-friendly interfaces and engaging experiences.",
+    title: "Data Dashboards",
+    description: "Clear financial and product data presented for quick decisions.",
     icon: <MdDashboard />
   },
   {
     id: 3,
-    title: "SEO-friendly Markup",
-    description: "Optimizing website structure for search engine visibility.",
+    title: "Search & Discovery",
+    description: "Search, filters, saved items, and personalized exploration.",
     icon: <MdSearch />
   },
   {
     id: 4,
-    title: "Performance",
-    description: "Enhancing speed and performance for a seamless UX.",
+    title: "Job Application Tools",
+    description: "Résumé analysis, tailored content, and cover-letter workflows.",
     icon: <MdSpeed />
   },
   {
     id: 5,
-    title: "Cross-browser",
-    description: "Ensuring consistent functionality across all browsers.",
+    title: "Health Experiences",
+    description: "Care schedules, vital tracking, and emergency support flows.",
     icon: <MdPublic />
   },
   {
     id: 6,
-    title: "Team Collaboration",
-    description: "Collaborating with teams on hackathons and group projects.",
+    title: "Responsive Web Apps",
+    description: "Accessible, polished interfaces that work across screen sizes.",
     icon: <MdGroups2 />
   },
 ];
 
 export default function Service() {
   return (
-    <section id="services" className="m-4 md:m-8 p-4 md:p-8">
-      <div className="flex flex-col gap-8 md:gap-0 lg:flex-row justify-between md:px-6 lg:px-20 items-start">
+    <section id="services" className="py-4 md:py-8">
+      <div className="flex flex-col items-start justify-between gap-8 md:gap-0 lg:flex-row">
         
               <div className="md:max-w-sm">
       <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight max-w-xs mb-3 md:mb-0">
-          WHAT WE CAN DO FOR YOU?
+          WHAT I BUILD
                   </h1>  
                   <p className="text-sm md:text-base text-gray-300 hidden md:block">
-                       Full-spectrum web development tailored to elevate your digital presence.
+                       Capabilities shaped by real projects—from AI workspaces to dashboards and care apps.
                   </p>
         </div>
        
@@ -62,7 +61,7 @@ export default function Service() {
           {Services.map((service) => (
             <div 
               key={service.id} 
-              className="glass aspect-square p-3 md:p-4 rounded-xl flex flex-col items-center justify-center text-center transition-transform duration-300 hover:rotate-[-2deg] hover:scale-105"
+              className="glass aspect-[4/3] p-3 md:p-4 rounded-xl flex flex-col items-center justify-center text-center transition-transform duration-300 hover:rotate-[-2deg] hover:scale-105"
             >
               {service.icon && (
                 <div className="text-2xl md:text-3xl text-cyan-400 mb-2">

@@ -2,18 +2,20 @@
 
 html {
   font-size: 86.4%;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   padding: 0;
+  overflow-x: clip;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
   background-attachment: fixed;
 }
 
 #root {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -74,4 +76,90 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
+}
+
+@keyframes stack-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.stack-marquee {
+  animation: stack-marquee 30s linear infinite;
+}
+
+.custom-cursor {
+  --cursor-x: -100px;
+  --cursor-y: -100px;
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 100;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(var(--cursor-x), var(--cursor-y), 0);
+  transition: opacity 120ms ease;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+.custom-cursor__ring,
+.custom-cursor__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor__ring {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.04);
+  transition: width 180ms ease, height 180ms ease, background-color 180ms ease;
+}
+
+.custom-cursor__dot {
+  width: 4px;
+  height: 4px;
+  background: #fff;
+}
+
+.custom-cursor.is-hovering .custom-cursor__ring {
+  width: 46px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+
+  input,
+  textarea,
+  select {
+    cursor: text;
+  }
+}
+
+#stacks:hover .stack-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-marquee {
+    animation: none;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
 }

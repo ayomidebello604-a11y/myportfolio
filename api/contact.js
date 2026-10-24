@@ -14,9 +14,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, message } = req.body ?? {};
+  const { name, email, message } = req.body ?? {};
+  const normalizedName = typeof name === 'string' ? name.trim() : '';
   const normalizedEmail = typeof email === 'string' ? email.trim() : '';
   const normalizedMessage = typeof message === 'string' ? message.trim() : '';
+
+  if (!normalizedName || normalizedName.length > 120) {
+    return res.status(400).json({ error: 'Enter your name.' });
+  }
 
   if (!/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(normalizedEmail)) {
     return res.status(400).json({ error: 'Enter a valid email address.' });
@@ -42,11 +47,12 @@ export default async function handler(req, res) {
     await sendly.email.send({
       to: ['ayomidebello604@gmail.com'],
       from: 'Dev@bellosamad.me',
-      subject: `Portfolio message from ${normalizedEmail}`,
+      subject: `Portfolio message from ${normalizedName}`,
       html:
-        `<p><b>From:</b> ${escapeHtml(normalizedEmail)}</p>` +
+        `<p><b>Name:</b> ${escapeHtml(normalizedName)}</p>` +
+        `<p><b>Email:</b> ${escapeHtml(normalizedEmail)}</p>` +
         `<p style="white-space:pre-wrap">${escapeHtml(normalizedMessage)}</p>`,
-      text: `From: ${normalizedEmail}\n\n${normalizedMessage}`,
+      text: `Name: ${normalizedName}\nEmail: ${normalizedEmail}\n\n${normalizedMessage}`,
     });
 
     return res.status(200).json({ ok: true });
