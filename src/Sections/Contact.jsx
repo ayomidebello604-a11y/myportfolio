@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { IoMdSend } from 'react-icons/io';
+import Reveal from '../components/Reveal.jsx';
 
 const socials = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/samad-bello-a613573b9', icon: FaLinkedin },
@@ -47,16 +48,19 @@ export default function Contact() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-20">
-      <header className="mb-10 max-w-3xl md:mb-14">
-        <p className="mb-3 text-sm uppercase tracking-[0.25em] text-gray-400">Get in touch</p>
-        <h1 className="text-3xl font-bold md:text-5xl">Let’s talk.</h1>
-        <p className="mt-4 text-base leading-7 text-gray-300 md:text-lg">
-          Planning an AI product, dashboard, or other web application? Share what you’re working
-          on and I’ll get back to you.
-        </p>
-      </header>
+      <Reveal>
+        <header className="mb-12 max-w-3xl md:mb-16">
+          <p className="mb-3 text-sm uppercase tracking-[0.25em] text-gray-400">Get in touch</p>
+          <h1 className="text-3xl font-bold md:text-5xl">Let’s talk.</h1>
+          <p className="mt-4 text-base leading-7 text-gray-300 md:text-lg">
+            Planning an AI product, dashboard, or other web application? Share what you’re working
+            on and I’ll get back to you.
+          </p>
+        </header>
+      </Reveal>
 
-      <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:gap-12">
+      <Reveal>
+        <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:gap-12">
         <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-gray-700 bg-gray-900/50 p-5 md:p-8">
           <div>
             <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-gray-200">
@@ -164,7 +168,8 @@ export default function Contact() {
             </a>
           </div>
         </aside>
-      </div>
+        </div>
+      </Reveal>
     </main>
   );
 }

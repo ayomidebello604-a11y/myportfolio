@@ -1,8 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { MotionConfig } from 'motion/react';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import Reveal from './components/Reveal.jsx';
+import SiteIntro from './components/SiteIntro.jsx';
 import Home from './Sections/Home.jsx';
 import About from './Sections/About.jsx';
 import Contact from './Sections/Contact.jsx';
@@ -35,23 +38,28 @@ function NotFound() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <CustomCursor />
-      <div className="min-h-screen bg-black text-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:slug" element={<ProjectDetail />} />
-          <Route path="/hall-of-fame" element={<HallOfFame />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <ScrollToTop />
+        <CustomCursor />
+        <SiteIntro />
+        <div className="min-h-screen bg-black text-white">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/hall-of-fame" element={<HallOfFame />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Reveal>
+            <Footer />
+          </Reveal>
+        </div>
+      </BrowserRouter>
+    </MotionConfig>
   );
 }
 
