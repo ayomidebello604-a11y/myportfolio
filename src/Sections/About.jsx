@@ -3,7 +3,7 @@ import Stacks from '../components/Stacks.jsx';
 import RouteButton from '../components/RouteButton.jsx';
 import Reveal from '../components/Reveal.jsx';
 import profileImage from "../images/img.png";
-import resume from '../files/bellosamadcv.pdf';
+import resume from '../files/BELLO_SAMAD_MASTERRESUME.pdf';
 
 export default function About() {
   return (
@@ -51,7 +51,8 @@ export default function About() {
           <div className="flex flex-wrap gap-3 pt-2">
             <a
               href={resume}
-              download="Bello_Samad_CV.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-lg  px-5 py-3 font-medium transition hover:bg-gray-800"
             >
               View résumé

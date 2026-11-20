@@ -8,7 +8,7 @@ import Reveal from '../components/Reveal.jsx';
 import Stacks from '../components/Stacks.jsx';
 import { projects } from '../data/projects.js';
 import { hallOfFameHighlights } from '../data/hallOfFame.js';
-import resume from '../files/bellosamadcv.pdf';
+import resume from '../files/BELLO_SAMAD_MASTERRESUME.pdf';
 
 const featuredProjectSlugs = ['cv-boost-ai', 'aether-ai', 'FaultLineqa', 'flashfinance-ai'];
 
@@ -62,10 +62,11 @@ export default function Home() {
               <RouteButton to="/contact">Send a message</RouteButton>
               <a
                 href={resume}
-                download="Bello_Samad_CV.pdf"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-lg border border-gray-700 bg-gray-900/50 px-5 py-3 font-semibold transition hover:bg-gray-800"
               >
-                Download CV
+                View résumé
               </a>
             </div>
             <div className="mt-7 flex justify-center gap-3">
@@ -186,8 +187,13 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Résumé</p>
-                <a href={resume} download="Bello_Samad_CV.pdf" className="mt-1 inline-block hover:text-gray-300">
-                  Download CV
+                <a
+                  href={resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 inline-block hover:text-gray-300"
+                >
+                  View résumé
                 </a>
               </div>
               <div>
